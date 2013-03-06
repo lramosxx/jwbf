@@ -76,6 +76,6 @@
   </module>
   <module name="RegexpMultiline">
     <property name="severity" value="error"/>
-    <property name="format" value="\r\n$"/>
+    <property name="format" value="\r$"/>
   </module>
 </module>

@@ -6,7 +6,7 @@
 	<artifactId>jwbf</artifactId>
 	<packaging>jar</packaging>
 	<name>JWBF</name>
-	<version>1.4-SNAPSHOT</version>
+	<version>1.4-ME1</version>
 	<description>Java Wiki Bot Framework - A Wiki helper</description>
 	<url>http://jwbf.sourceforge.net/</url>
 	<issueManagement>
@@ -27,6 +27,15 @@
 			<comments>A business-friendly OSS license</comments>
 		</license>
 	</licenses>
+
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>googlecode</id>
+            <url>svn:https://me-ceap-maven.googlecode.com/svn/maven</url>
+        </repository>
+    </distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -241,6 +250,11 @@
 			</plugin>
 		</plugins>
 		<extensions>
+            <extension>
+                <groupId>com.google.code.maven-svn-wagon</groupId>
+                <artifactId>maven-svn-wagon</artifactId>
+                <version>1.4</version>
+            </extension>
 		</extensions>
 
 
@@ -395,19 +409,8 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	<distributionManagement>
-		<repository>
-			<id>sourceforge.net</id>
-			<url>sftp://web.sourceforge.net/home/groups/j/jw/jwbf/m2repo-release</url>
-
-		</repository>
-		<snapshotRepository>
-			<id>sourceforge.net</id>
-			<url>sftp://web.sourceforge.net/home/groups/j/jw/jwbf/m2repo-snapshot</url>
-			<uniqueVersion>false</uniqueVersion>
-		</snapshotRepository>
-	</distributionManagement>
 	<properties>
 		<maven.test.jvmargs>-Dfile.encoding=US-ASCII</maven.test.jvmargs>
+        <skipTests>true</skipTests>
 	</properties>
 </project>
